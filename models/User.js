@@ -1,0 +1,30 @@
+const mongoose = require('mongoose');
+const {Schema} = mongoose;
+
+const UserSchema = new Schema({
+    name : {
+        type: String,
+        required : true
+    },
+    email : {
+        type: String,
+        required : true,
+        unique : true
+    },
+    password : {
+        type: String,
+        required : true
+    },
+    cpassword : {
+        type: String,
+        required : false
+    },
+    date : {
+        type: Date,
+        default : Date.now
+    }
+})
+
+const user = mongoose.model('user',UserSchema);
+// user.createIndexes();  use to create indexes of unique attribute
+module.exports = user;
