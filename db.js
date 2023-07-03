@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const mongooseURI = 'mongodb://127.0.0.1:27017/inotebook';
+const DB = "mongodb+srv://vishal1807gupta:geM4qy3L5zJYm5EB@cluster0.dhzjhrj.mongodb.net/inotebook?retryWrites=true&w=majority";
+const mongooseURI =DB;
 
 const connectToMongo = ()=>{
     mongoose.set('strictQuery', false);
